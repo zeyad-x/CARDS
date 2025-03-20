@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 id="hide">يرجي استخدام شاشه اكبر او توسيع عرض المتصفح وا تصغير حجم المتصفح او تعيين وضع سطح المكتب في الهواتف
+        واللابات</h1>
+    <div class="page">
+        <h1>cruds</h1>
+        <p id="p">creat read update delete search</p>
+        <div class="inputs">
+            <input type="text" id="title" placeholder="title">
+            <input type="number" onkeyup="gettotal()" id="price" placeholder="price">
+            <input type="number" onkeyup="gettotal()" id="taxes" placeholder="taxes">
+            <input type="number" onkeyup="gettotal()" id="ads" placeholder="ads">
+            <input type="number" onkeyup="gettotal()" id="discount" placeholder="discount">
+
+
+            <p id="total">total: </p>
+
+            <input type="number" id="count" placeholder="count">
+            <input type="text" id="categry" placeholder="categry">
+            <button id="create" onclick="creat()">create</button>
+            <input type="text" id="search" onkeyup="getsearch(this.value)"  placeholder="search">
+            <button onclick="search4(this.id)" id="searchbtn">search by title</button>
+            <p id="or">or</p>
+            <button onclick="search4(this.id)" id="categrybtn">categry search by categry</button>
+
+        </div>
+        <div class="deletealldiv"></div>
+        <div class="outputsTitles">
+            <table>
+                <thead>
+                    <tr class="card">
+                        <th class="td">ID</th>
+                        <th class="td">Title</th>
+                        <th class="td">Price</th>
+                        <th class="td">Taxes</th>
+                        <th class="td">Ads</th>
+                        <th class="td">Discount</th>
+                        <th class="td">Total</th>
+                        <th class="td">Category</th>
+                        <th class="td">Update</th>
+                        <th class="td">Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="outputs">
+                    <!-- سيتم إضافة البيانات هنا عبر JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
