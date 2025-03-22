@@ -110,13 +110,14 @@ function clearinputs(){
 //   j = lwe
 // }
 //read
+let lwe;
 function read(){
   let table = ''
 
   for(let i = 0; i < datepro.length; i++){
     table += `
     <tr>
-      <td>${i}</td>
+      <td>${i + 1}</td>
       <td>${datepro[i].title}</td>
       <td>${datepro[i].price}</td>
       <td>${datepro[i].taxes}</td>
@@ -133,7 +134,7 @@ function read(){
   let deletealldiv = document.getElementsByClassName('deletealldiv')[0]
   if (datepro.length > 0) {
       deletealldiv.innerHTML = `
-     <button id="deleteall" onclick="deletall()">delete all(${datepro.length - 1})</button>`
+     <button id="deleteall" onclick="deletall()">delete all(${datepro.length})</button>`
      
       
   }else{
@@ -163,7 +164,9 @@ function updateone(i){
     discount.value = datepro[i].discount
     // total.innerHTML = datepro[i].total
     gettotal()
-    count.value = 1
+    datepro[i].count = 1
+    count.style.display = 'none'
+
     categry.value = datepro[i].categry
     create.innerHTML = 'update'
     mood = 'update'
@@ -193,8 +196,11 @@ let outputs = document.getElementById('outputs');
 function search4(id) {
     if (id === 'searchbtn') {
         searchmood = 'title';
+        searchinput.placeholder = 'search by title';
+
     } else if (id === 'categrybtn') {
         searchmood = 'categry';
+        searchinput.placeholder = 'search by categry';
     }
     searchinput.focus();
     console.log("وضع البحث:", searchmood);
